@@ -165,22 +165,22 @@ Houses all the static files, including JavaScript, CSS, and images. This directo
 ## 📸 **Screenshots**
 
 ### **Admin Dashboard**  
-![Admin Dashboard Placeholder](assets/screenshots/admin-dashboard.png)  
+![Admin Dashboard Placeholder](/RestaurantProject/wwwroot/images/admin-dashboard.png)  
 
 ### **About Management**  
-![Team Management Placeholder](assets/screenshots/team-management.png)  
+![Team Management Placeholder](/RestaurantProject/wwwroot/images/team-management.png)  
 
 ### **Team Management**  
-![Team Management Placeholder](assets/screenshots/team-management.png)  
+![Team Management Placeholder](/RestaurantProject/wwwroot/images/team-management.png)  
 
 ### **Team Management**  
-![Team Management Placeholder](assets/screenshots/team-management.png)  
+![Team Management Placeholder](/RestaurantProject/wwwroot/images/team-management.png)  
 
 ### **Menu Showcase**  
-![Menu Showcase Placeholder](assets/screenshots/menu-showcase.png)  
+![Menu Showcase Placeholder](/RestaurantProject/wwwroot/images/menu-showcase.png)  
 
 ### **Testimonials**  
-![Testimonials Placeholder](assets/screenshots/testimonials.png)  
+![Testimonials Placeholder](/RestaurantProject/wwwroot/images/testimonials.png)  
 
 ---
 
