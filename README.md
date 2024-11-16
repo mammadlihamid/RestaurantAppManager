@@ -58,7 +58,64 @@ Welcome to the **Restaurant Management System** built with **.NET 8.0**! This pl
 
 ---
 
-## 📂 **Application Structure**  
+## 🏗️ **N-Tier Architecture**
+
+The **Restaurant Management System** is designed using an **N-Tier Architecture** to ensure modularity, maintainability, and scalability. This architecture divides the application into distinct layers, each responsible for a specific function:
+
+### 1. **Presentation Layer (PL)**  
+   **Purpose**: The user-facing layer responsible for UI and user interactions.  
+
+   **Key Responsibilities**:
+   - Displays data to users via Razor Views.
+   - Captures and validates user inputs.
+   - Communicates with the **Business Logic Layer** to retrieve and display data.
+
+   **Components**:
+   - **Controllers** (e.g., `HomeController`, `Admin/TeamController`).
+   - **Views** (e.g., Razor templates for displaying data).
+
+---
+
+### 2. **Business Logic Layer (BLL)**  
+   **Purpose**: Contains the core logic and rules of the application.  
+
+   **Key Responsibilities**:
+   - Processes data from the **Presentation Layer**.
+   - Enforces business rules and validation.
+   - Communicates with the **Data Access Layer** for database operations.
+
+   **Components**:
+   - **Services** (e.g., `TeamService`, `TestimonialService`).
+
+---
+
+### 3. **Data Access Layer (DAL)**  
+   **Purpose**: Manages all interactions with the database.  
+
+   **Key Responsibilities**:
+   - Executes CRUD operations on the database.
+   - Maps database entities to domain models using **Entity Framework Core**.
+
+   **Components**:
+   - **DbContext** (e.g., `RestaurantDbContext` for managing database connections).
+   - **Repositories** (optional for abstracting data access logic).
+
+---
+
+### 4. **Database Layer (DB)**  
+   **Purpose**: Stores application data persistently.  
+
+   **Key Responsibilities**:
+   - Organizes data in tables.
+   - Enforces data integrity with constraints and keys.
+   - Provides data to the **Data Access Layer**.
+
+   **Technology**:
+   - SQL Server.
+
+---
+
+## 📂 **Application Structure**
 
 ### 🗂️ **Project Root Directory**  
 
@@ -72,7 +129,7 @@ RestaurantProject/
 │       │   ├── Testimonial/        # Views for Testimonial Management
 │       │   ├── Food/               # Views for Food Menu Management
 │       │   ├── About/              # Views for About Section
-│       │   └── Position/           # Views for Positions (roles)
+│       │   └── Position/           # Views for Position Management
 │       └── wwwroot/                # Static files for Admin Panel (CSS, JS, images)
 │
 ├── Controllers/                    # Public-facing controllers
@@ -102,42 +159,21 @@ RestaurantProject/
 └── Startup.cs                      # Configures services and middleware
 ```
 
-### 🔍 **Detailed Breakdown of Important Directories**  
-
-#### **Areas/Admin/**  
-This folder contains all files related to the admin panel.  
-
-- **Controllers/**: Handles business logic for different sections like Team, Food, and Testimonials.  
-- **Views/**: Contains Razor Views for each admin section.  
-- **wwwroot/**: Admin-specific static files.  
-
-#### **Controllers/**  
-These are public-facing controllers that manage requests for the main website.  
-
-#### **Models/**  
-Contains classes for data structures and view models for passing data between controllers and views.  
-
-#### **Views/**  
-Organized into controller-specific folders. This folder also contains shared layouts and partial views.  
-
-#### **wwwroot/**  
-Houses all the static files, including JavaScript, CSS, and images. This directory ensures easy access to client-side resources.
-
 ---
 
 ## 📥 **Installation Guide**
 
-### **Prerequisites** 🔍  
+### **Prerequisites**  
 1. **.NET 8.0 SDK** ([Download](https://dotnet.microsoft.com/))  
 2. **SQL Server** (Any edition)  
 3. **Visual Studio 2022** or later  
 
-### **Steps** 🚶‍♂️  
+### **Steps**  
 
 1. **Clone the Repository**  
    ```bash  
    git clone https://github.com/mammadlihamid/restaurantappmanager.git  
-   cd restaurant-management  
+   cd restaurantappmanager  
    ```  
 
 2. **Open the Project**  
@@ -188,8 +224,8 @@ This project is licensed under the **MIT License**. Check the `LICENSE` file for
 
 ## ✉️ **Contact**  
 
-For any questions or feedback:  
+👤 **Name**: Hamid Mammadli  
 
-**👤 Name**: Hamid Mammadli
-**📧 Email**: hemid359@gmail.com 
-**🔗 GitHub**: [github.com/mammadlihamid](https://github.com/mammadlihamid)  
+📧 **Email**: hemid359@gmail.com  
+
+🔗 **GitHub**: [github.com/mammadlihamid](https://github.com/mammadlihamid)  
