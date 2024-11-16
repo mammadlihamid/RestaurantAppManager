@@ -1,0 +1,143 @@
+﻿@model Entities.TableModels.HomeViewModel
+
+<!-- ABOUT -->
+<section id="about" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-12">
+                <div class="about-info">
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
+                        <h4>Read our story</h4>
+                        <h2>We've been Making The Delicious Foods Since 1999</h2>
+                    </div>
+
+                    <div class="wow fadeInUp" data-wow-delay="0.4s">
+                        <p>@Model.Abouts.FirstOrDefault()?.Description</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <div class="wow fadeInUp about-image" data-wow-delay="0.6s">
+                    <img src="images/about-image.jpg" class="img-responsive" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Meet our chefs</h2>
+                    <h4>They are nice &amp; friendly</h4>
+                </div>
+            </div>
+
+            @foreach (var teamMember in Model.Teams)
+            {
+                <div class="col-md-4 col-sm-4">
+                    <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                        <img src="@teamMember.PhotoUrl" class="img-responsive" alt="">
+                        <div class="team-hover">
+                            <div class="team-item">
+                                <h4>@teamMember.Description</h4>
+                                <ul class="social-icon">
+                                    @if (!string.IsNullOrEmpty(teamMember.LinkedinLink))
+                                    {
+                                        <li><a href="@teamMember.LinkedinLink" class="fa fa-linkedin-square"></a></li>
+                                    }
+                                    @if (!string.IsNullOrEmpty(teamMember.FacebookLink))
+                                    {
+                                        <li><a href="@teamMember.FacebookLink" class="fa fa-facebook"></a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>@teamMember.Fullname</h3>
+                        <p>@teamMember.Position?.Name</p>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Our Menus</h2>
+                    <h4>Tea Time &amp; Dining</h4>
+                </div>
+            </div>
+
+            @foreach (var food in Model.Foods)
+            {
+                <div class="col-md-4 col-sm-6">
+                    <!-- MENU THUMB -->
+                    <div class="menu-thumb">
+                        <a href="@food.PhotoUrl" class="image-popup" title="@food.Name">
+                            <img src="@food.PhotoUrl" class="img-responsive" alt="">
+
+                            <div class="menu-info">
+                                <div class="menu-item">
+                                    <h3>@food.Name</h3>
+                                    <p>@food.Tag</p>
+                                </div>
+                                <div class="menu-price">
+                                    <span>$@food.Price</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section id="testimonial" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Testimonials</h2>
+                </div>
+            </div>
+
+            <div class="col-md-offset-2 col-md-8 col-sm-12">
+                <div class="owl-carousel owl-theme">
+                    @foreach (var testimonial in Model.Testimonials)
+                    {
+                        <div class="item">
+                            <p>@testimonial.Message</p>
+                            <div class="tst-author">
+                                <h4>@testimonial.Fullname</h4>
+                                <span>@testimonial.Position</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
